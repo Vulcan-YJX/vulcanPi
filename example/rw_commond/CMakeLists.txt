@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.0)
 project(RWCommond)
-
-
 find_package(vulcanPi QUIET)
 
 if (vulcanPi_FOUND)
+  message(STATUS "vulcanPi found")
   add_executable( ${PROJECT_NAME} main.cpp)
   include_directories(${VulcanSerial_INCLUDE_DIR})
   target_link_libraries (${PROJECT_NAME} ${VulcanSerial_LIBRARY})
 else()
+  message(STATUS "vulcanPi not found")
   # compile with source code
   set(VulcanSerialRootPath "${CMAKE_CURRENT_SOURCE_DIR}/../..")
   include_directories(${VulcanSerialRootPath}/include)
