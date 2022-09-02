@@ -8,7 +8,7 @@ using namespace vulcanPi;
 
 int main() {
 
-	SerialPort serialPort("/dev/ttyUSB0", BaudRate::B_115200, NumDataBits::EIGHT, Parity::NONE, NumStopBits::ONE);
+	SerialPort serialPort("/dev/ttyS3", BaudRate::B_115200, NumDataBits::EIGHT, Parity::NONE, NumStopBits::ONE);
 	serialPort.Open(); 
 
 	while(1){
